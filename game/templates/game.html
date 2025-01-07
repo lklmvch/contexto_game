@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра</title>
+</head>
+<body>
+    <h1>Игра с загаданным словом</h1>
+<!--    <p>Загаданное слово: {{ game.word_to_guess }}</p>-->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+
+    <h2>Попытки:</h2>
+    <ul>
+        {% for guess in guesses %}
+            <li>{{ guess.user_word }} - Схожесть: {{ guess.similarity_score|floatformat:2 }}%</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

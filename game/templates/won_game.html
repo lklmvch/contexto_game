@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поздравляем!</title>
+</head>
+<body>
+    <h1>Поздравляем! Вы угадали слово!</h1>
+    <p>Загаданное слово было: {{ game.word_to_guess }}</p>
+    <a href="{% url 'home' %}">Вернуться на главную</a>
+</body>
+</html>
